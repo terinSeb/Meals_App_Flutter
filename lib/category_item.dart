@@ -1,17 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:meals_app_flutter/category_meals_screnn.dart';
+import './category_meals_screnn.dart';
 
 class CategoryItem extends StatelessWidget {
   final String title;
   final Color color;
-
-  const CategoryItem({Key? key, required this.title, required this.color})
+  final String catgeoryId;
+  const CategoryItem(
+      {Key? key,
+      required this.title,
+      required this.color,
+      required this.catgeoryId})
       : super(key: key);
   void selectCategory(BuildContext ctx) {
-    Navigator.of(ctx).push(MaterialPageRoute(builder: (_) {
-      // ignore: prefer_const_constructors
-      return CategoryMealsScreen();
-    }));
+    Navigator.of(ctx).pushNamed(CategoryMealsScreen.routeName,
+        arguments: {'id': catgeoryId, 'title': title});
   }
 
   @override
