@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import './category_meals_screnn.dart';
-import './categories_screnn.dart';
+import 'screens/category_meals_screnn.dart';
+import 'screens/categories_screnn.dart';
 
 void main() => runApp(const MyApp());
 
